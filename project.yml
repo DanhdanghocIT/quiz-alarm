@@ -1,0 +1,46 @@
+name: QuizAlarm
+options:
+  bundleIdPrefix: com.quizalarm
+  deploymentTarget:
+    iOS: "17.0"
+  xcodeVersion: "16.0"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    SUPPORTS_MACCATALYST: NO
+    SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: NO
+
+targets:
+  QuizAlarm:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: QuizAlarm
+    info:
+      path: Config/Info.plist
+      properties:
+        CFBundleDisplayName: "Quiz Alarm"
+        CFBundleShortVersionString: "1.0.0"
+        CFBundleVersion: "1"
+        UILaunchScreen: {}
+        NSCameraUsageDescription: "Quiz Alarm cần quyền truy cập Camera để quét mã QR nhằm xác nhận bạn đã thức dậy."
+        UIBackgroundModes:
+          - audio
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UIRequiresFullScreen: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.quizalarm.app
+        PRODUCT_NAME: QuizAlarm
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: Config/Info.plist
+        CODE_SIGN_STYLE: Manual
+        CODE_SIGNING_REQUIRED: NO
+        CODE_SIGNING_ALLOWED: NO
+        CODE_SIGN_IDENTITY: ""
